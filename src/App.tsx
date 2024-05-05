@@ -1,14 +1,13 @@
 import './App.css'
+import {RouterComponent} from "./routes";
 
 function App() {
 
-  return (
-    <>
-        <div className="container">
-            <h1>Bienvenue sur GoodSpeakVR !</h1>
+    return (
+        <div className="app-container">
+            <RouterComponent/>
         </div>
-    </>
-  )
+    )
 }
 
 export default App
