@@ -3,6 +3,7 @@ import {Login} from "../pages/auth/Login.tsx";
 import {ForgotPassword} from "../pages/auth/ForgotPassword.tsx";
 import {DashboardSuperAdmin} from "../pages/dashboard/dashboard-superadmin.tsx";
 import {ProtectedRoute} from "./ProtectedRoute.tsx";
+import {ForgotPasswordConfirmation} from "../pages/auth/ForgotPasswordConfirmation.tsx";
 
 export const RouterComponent = () => {
     return (
@@ -11,6 +12,7 @@ export const RouterComponent = () => {
             <Route path="/" element={<Login/>}/>
             <Route path="/login" element={<Login/>}/>
             <Route path="/forgot-password" element={<ForgotPassword/>}/>
+            <Route path="/forgot-password/confirmation" element={<ForgotPasswordConfirmation/>}/>
 
             <Route path="/dashboard" element={<ProtectedRoute Component={<DashboardSuperAdmin/>} />}/>
         </Routes>

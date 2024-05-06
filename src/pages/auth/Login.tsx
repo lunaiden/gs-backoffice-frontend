@@ -1,4 +1,4 @@
-import {useNavigate} from "react-router-dom";
+import {Navigate, useNavigate} from "react-router-dom";
 import './index.css'
 import {Button, Form} from "react-bootstrap";
 import {useState} from "react";
@@ -6,20 +6,25 @@ import api from "../../utils/api.ts";
 import {useAuth} from "../../hooks/useAuth.tsx";
 
 export const Login = () => {
-    const {loginUser} = useAuth();
+    const {loginUser, user} = useAuth();
+    const navigate = useNavigate();
 
-    // TODO : AJOUTER UNE DATE D'EXPIRATION AU USER (renvoyer celle du cookie depuis l'API)
+    console.log(user);
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
+    if (user) {
+        console.log("j'passe là");
+        return <Navigate to="/dashboard"/>;
+    }
+
     const handleLogin = () => {
         api.post('/auth/login', {email, password},
-            {
-                withCredentials: true
-            })
+            {withCredentials: true}
+        )
             .then((res) => {
-                console.log("la user data")
+                console.log("la user data");
                 loginUser(res.data.user);
             })
             .catch((err) => {
@@ -27,7 +32,6 @@ export const Login = () => {
             })
     }
 
-    const navigate = useNavigate();
     return (
         <div className='auth-page'>
             <div className='form-bloc'>

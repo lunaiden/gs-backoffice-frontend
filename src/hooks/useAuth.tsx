@@ -11,7 +11,6 @@ export const AuthProvider = ({children}: React.PropsWithChildren) => {
     const navigate = useNavigate();
 
     const loginUser = (data: IUser) => {
-        console.log("je passe ici ?")
         setUser(data);
         navigate("/dashboard");
     }
