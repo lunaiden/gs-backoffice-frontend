@@ -6,6 +6,8 @@ import api from "../../utils/api.ts";
 import {useAuth} from "../../hooks/useAuth.tsx";
 
 export const Login = () => {
+    console.log("api", import.meta.env.VITE_API_URL);
+
     const {loginUser, user} = useAuth();
     const navigate = useNavigate();
 
