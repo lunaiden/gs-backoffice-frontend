@@ -9,13 +9,11 @@ export const Login = () => {
     const {loginUser, user} = useAuth();
     const navigate = useNavigate();
 
-    console.log(user);
-
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [error, setError] = useState("");
 
     if (user) {
-        console.log("j'passe là");
         return <Navigate to="/dashboard"/>;
     }
 
@@ -24,11 +22,10 @@ export const Login = () => {
             {withCredentials: true}
         )
             .then((res) => {
-                console.log("la user data");
                 loginUser(res.data.user);
             })
-            .catch((err) => {
-                console.log("login error", err);
+            .catch(() => {
+                setError('Identifiants incorrects');
             })
     }
 
@@ -50,6 +47,10 @@ export const Login = () => {
                                           onChange={(e) => setPassword(e.target.value)}
                             />
                         </Form.Group>
+                        {error &&
+                            <Form.Text className='text-danger text-center'>
+                                {error}
+                            </Form.Text>}
                         <Button variant="dark" onClick={handleLogin}>Se connecter</Button>
                     </Form>
                     <Button variant="link" onClick={() => navigate('/forgot-password')}>Mot de passe oublié</Button>

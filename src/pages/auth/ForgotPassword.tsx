@@ -30,7 +30,7 @@ export const ForgotPassword = () => {
 
     return (
         <div className='forgot-password-page'>
-            <h1 className='mb-3'>Vous avez perdu votre mot de passe ?</h1>
+            <h1 className='mb-3'>Vous avez oublié votre mot de passe ?</h1>
             <h6>Pas de problème !
                 Nous allons vous envoyer un lien pour le réinitialiser.
                 Indiquez l'adresse e-mail que vous utilisez pour vous connecter à votre compte.</h6>
