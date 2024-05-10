@@ -6,8 +6,6 @@ import api from "../../utils/api.ts";
 import {useAuth} from "../../hooks/useAuth.tsx";
 
 export const Login = () => {
-    console.log("api", import.meta.env.VITE_API_URL);
-
     const {loginUser, user} = useAuth();
     const navigate = useNavigate();
 
@@ -19,8 +17,10 @@ export const Login = () => {
         return <Navigate to="/dashboard"/>;
     }
 
+    console.log(typeof email);
+
     const handleLogin = () => {
-        api.post('/auth/login', {email, password},
+        api.post('/auth/login', {email: email, password: password},
             {withCredentials: true}
         )
             .then((res) => {
