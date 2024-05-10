@@ -1,11 +1,12 @@
 import {Navigate, Route, Routes} from "react-router-dom";
-import {Login} from "../pages/auth/Login.tsx";
-import {ForgotPassword} from "../pages/auth/ForgotPassword.tsx";
-import {DashboardSuperAdmin} from "../pages/dashboard/dashboard-superadmin.tsx";
+import {Login} from "../pages/Auth/Login.tsx";
+import {ForgotPassword} from "../pages/Auth/ForgotPassword.tsx";
+import {DashboardSuperadmin} from "../pages/Dashboard/Dashboard-Superadmin.tsx";
 import {ProtectedRoute} from "./ProtectedRoute.tsx";
-import {ForgotPasswordConfirmation} from "../pages/auth/ForgotPasswordConfirmation.tsx";
-import {ResetPassword} from "../pages/auth/ResetPassword.tsx";
-import {ResetPasswordConfirmation} from "../pages/auth/ResetPasswordConfirmation.tsx";
+import {ForgotPasswordConfirmation} from "../pages/Auth/ForgotPasswordConfirmation.tsx";
+import {ResetPassword} from "../pages/Auth/ResetPassword.tsx";
+import {ResetPasswordConfirmation} from "../pages/Auth/ResetPasswordConfirmation.tsx";
+import {CompanyList} from "../pages/Company/CompanyList.tsx";
 
 export const RouterComponent = () => {
     return (
@@ -17,7 +18,11 @@ export const RouterComponent = () => {
             <Route path="/reset-password/:token" element={<ResetPassword/>}/>
             <Route path="/reset-password-confirmation" element={<ResetPasswordConfirmation/>}/>
 
-            <Route path="/dashboard" element={<ProtectedRoute Component={<DashboardSuperAdmin/>} />}/>
+            <Route path="/dashboard" element={<ProtectedRoute Component={<DashboardSuperadmin/>} />}/>
+
+
+            {/* COMPANY */}
+            <Route path="/dashboard/company" element={<ProtectedRoute Component={<CompanyList/>} />}/>
         </Routes>
     )
 }

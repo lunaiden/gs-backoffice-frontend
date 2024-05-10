@@ -1,0 +1,11 @@
+.bloc-company-dashboard {
+    width: 90%;
+    margin: 3rem auto;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.company-card {
+    width: 33%;
+}

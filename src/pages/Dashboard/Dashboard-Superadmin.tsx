@@ -1,8 +1,11 @@
 import {Button} from "react-bootstrap";
 import {useAuth} from "../../hooks/useAuth.tsx";
 import api from "../../utils/api.ts";
+import {Header} from "../../components/Header/Header.tsx";
 
-export const DashboardSuperAdmin = () => {
+import './Dashboard.css';
+
+export const DashboardSuperadmin = () => {
     const {logout} = useAuth();
 
     const logoutUser = () => {
@@ -13,8 +16,8 @@ export const DashboardSuperAdmin = () => {
 
     return (
         <>
-            <div className='bloc-form-forgot w-100 d-flex flex-column align-items-center'>
-                <h1 className='mb-5 mt-5'>Dashboard</h1>
+            <Header title='Tableau de bord'/>
+            <div className='bloc-page w-100 d-flex flex-column align-items-center'>
                 <br/>
                 <br/>
                 <Button variant="dark" onClick={logoutUser}>Se déconnecter</Button>
