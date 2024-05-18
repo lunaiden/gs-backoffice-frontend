@@ -1,0 +1,40 @@
+.sidebar-wrapper {
+    background-color: #F7F7F7;
+}
+
+.create-update-company-page {
+    padding-bottom: 3rem;
+    text-align: center;
+}
+
+.flex-block {
+    width: 90%;
+    margin: 3rem auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #FFFFFF;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.block-title {
+    text-align: left;
+    display: block;
+    width: 40%;
+}
+
+.form {
+    text-align: left;
+    width: 60%;
+}
+
+.error, .text-muted.error {
+    color: var(--mediumRed) !important;
+}
+
+.success, .text-muted.success {
+    color: green !important;
+}

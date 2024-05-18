@@ -7,6 +7,9 @@ import {ForgotPasswordConfirmation} from "../pages/Auth/ForgotPasswordConfirmati
 import {ResetPassword} from "../pages/Auth/ResetPassword.tsx";
 import {ResetPasswordConfirmation} from "../pages/Auth/ResetPasswordConfirmation.tsx";
 import {CompanyList} from "../pages/Company/CompanyList.tsx";
+import {CompanyCreate} from "../pages/Company/CompanyCreate/CompanyCreate.tsx";
+import {CompanyDetails} from "../pages/Company/CompanyDetails/CompanyDetails.tsx";
+import {CompanyUpdate} from "../pages/Company/CompanyUpdate/CompanyUpdate.tsx";
 
 export const RouterComponent = () => {
     return (
@@ -18,11 +21,14 @@ export const RouterComponent = () => {
             <Route path="/reset-password/:token" element={<ResetPassword/>}/>
             <Route path="/reset-password-confirmation" element={<ResetPasswordConfirmation/>}/>
 
-            <Route path="/dashboard" element={<ProtectedRoute Component={<DashboardSuperadmin/>} />}/>
+            <Route path="/superadmin/dashboard" element={<ProtectedRoute Component={<DashboardSuperadmin/>} />}/>
 
 
             {/* COMPANY */}
-            <Route path="/dashboard/company" element={<ProtectedRoute Component={<CompanyList/>} />}/>
+            <Route path="/superadmin/companies" element={<ProtectedRoute Component={<CompanyList/>} />}/>
+            <Route path="/superadmin/companies/create" element={<ProtectedRoute Component={<CompanyCreate/>} />}/>
+            <Route path="/superadmin/companies/details/:id" element={<ProtectedRoute Component={<CompanyDetails/>} />}/>
+            <Route path="/superadmin/companies/edit/:id" element={<ProtectedRoute Component={<CompanyUpdate/>} />}/>
         </Routes>
     )
 }

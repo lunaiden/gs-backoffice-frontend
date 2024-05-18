@@ -14,14 +14,14 @@ export const Navbar = () => {
     };
     return (
         <>
-            <div className="d-none d-md-flex bg-light sidebar"
+            <div className="d-none d-md-flex sidebar"
             >
                 <div className="navbar-list">
                     <div className='item'>
-                        <NavLink to={'/dashboard'}>Tableau de bord</NavLink>
+                        <NavLink to={'/superadmin/dashboard'}>Tableau de bord</NavLink>
                     </div>
                     <div className='item'>
-                        <NavLink to={'/dashboard/company'}>Entreprises</NavLink>
+                        <NavLink to={'/superadmin/companies'}>Entreprises</NavLink>
                     </div>
                 </div>
                 <br/>

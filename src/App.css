@@ -2,6 +2,9 @@
   font-synthesis: weight style;
 
   --darkBlueText: #1d2a54;
+  --darkBlue: #1C3860;
+  --mediumBlue: #3A5BC7;
+  --mediumRed: #CE2C31;
   --font-primary: 'DM Sans', sans-serif;
 }
 
@@ -13,5 +16,6 @@ body {
 
 .app-container {
   color: var(--darkBlueText);
-  font-family: var(--darkBlueText);
+  font-family: var(--font-primary);
+  font-size: 14px;
 }

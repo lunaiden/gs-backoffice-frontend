@@ -14,10 +14,16 @@ export const Login = () => {
     const [error, setError] = useState("");
 
     if (user) {
-        return <Navigate to="/dashboard"/>;
+        if(user.roleName === 'superadmin') {
+            return  <Navigate to="/superadmin/dashboard"/>
+        }
+        if(user.roleName === 'admin' || user.roleName === 'referent') {
+            return  <Navigate to="/admin/dashboard"/>
+        }
+        if(user.roleName === 'trainee') {
+            return <Navigate to="/dashboard"/>;
+        }
     }
-
-    console.log(typeof email);
 
     const handleLogin = () => {
         api.post('/auth/login', {email: email, password: password},

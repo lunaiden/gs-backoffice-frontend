@@ -12,7 +12,7 @@ export const AuthProvider = ({children}: React.PropsWithChildren) => {
 
     const loginUser = (data: IUser) => {
         setUser(data);
-        navigate("/dashboard");
+        navigate("/superadmin/dashboard");
     }
 
     const logout = () => {

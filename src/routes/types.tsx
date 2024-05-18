@@ -8,4 +8,5 @@ export interface IUser {
     email: string;
     lastName: string | null;
     firstName: string | null;
+    roleName: string;
 }

@@ -1,0 +1,45 @@
+.action-button {
+    font-family: 'DM Sans', sans-serif !important;
+}
+
+.action-button.link {
+    border: none;
+    background: none;
+    color: var(--mediumBlue);
+    text-decoration: underline;
+}
+
+.link.go-back {
+    display: inline-block;
+    width: fit-content;
+    color: black;
+    margin-top: 2rem;
+    margin-left: 2rem;
+}
+
+.link.go-back:before {
+    font-size: 23px;
+    letter-spacing: 8px;
+    content:"\2039";
+}
+
+.action-button.rectangle {
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+}
+
+.action-button.primary {
+    color: white;
+    background: var(--mediumRed);
+    border: var(--mediumRed);
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, .3);
+}
+
+.action-button.primary:hover {
+    transform: scale(1.05);
+}
+
+.action-button.primary:active {
+    box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+    transform:  translateY(3px);
+}

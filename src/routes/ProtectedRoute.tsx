@@ -6,5 +6,15 @@ export const ProtectedRoute: React.ElementType = ({Component}) => {
     if (!user) {
         return <Navigate to="/login"/>;
     }
+
+    if(location.pathname.includes('superadmin') && user.roleName !== 'superadmin') {
+        if(user.roleName === 'admin' || user.roleName === 'referent') {
+           return  <Navigate to="/admin/dashboard"/>
+        }
+        if(user.roleName === 'trainee') {
+            return <Navigate to="/dashboard"/>;
+        }
+        return <Navigate to="/login"/>
+    }
     return Component;
 };

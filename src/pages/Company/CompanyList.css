@@ -1,11 +1,14 @@
-.bloc-company-dashboard {
+.block-company-dashboard {
     width: 90%;
-    margin: 3rem auto;
-    display: flex;
-    flex-direction: row;
-    gap: 1rem;
+    margin: 1rem auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+    grid-auto-rows: minmax(100px, auto);
 }
 
-.company-card {
-    width: 33%;
+@media screen and (max-width: 900px) {
+    .block-company-dashboard {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
